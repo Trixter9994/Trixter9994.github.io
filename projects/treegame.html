@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+<script>var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+ctx.canvas.width  = window.innerWidth;
+ctx.canvas.height = window.innerHeight;
+
+var gridX = 500;
+var gridY = 500;
+var cell = 1;
+var grid = Array(gridX);
+var invalidPos=[];
+var TREES=[];
+var maxTREE=15;
+
+for (i=0;i<grid.length;i++) {
+  grid[i] = Array(gridY);
+}
+
+for(x=0;x<grid.length;x++) {
+  for(y=0;y<grid[x].length;y++) {
+    grid[x][y] = [x,y,0];
+  }
+}
+console.log(grid);
+for(x=0;x<grid.length;x++){
+  for(y=0;y<grid[x].length;y++) {
+    ctx.beginPath();
+    //ctx.rect(grid[x][y][0]*cell,grid[x][y][1]*cell,cell,cell);
+    ctx.stroke();
+  }
+}
+
+
+//start tree growth
+grid[5][5][2] = 1 
+
+function spread() {
+  TREES=[]
+  for(x=0;x<grid.length;x++){
+    for(y=0;y<grid[x].length;y++) {
+      if(grid[x][y][2]>0&&grid[x][y][2]<maxTREE){
+        TREES.push(grid[x][y]);
+      }
+    }
+  }
+  for(i=0;i<=TREES.length-1;i++){
+    ctx.beginPath();
+    ctx.fillStyle = "rgb(0,"+(255/(TREES[i][2]/4).toString())+",0)"
+    ctx.fillRect(TREES[i][0]*cell,TREES[i][1]*cell,cell,cell);
+    ctx.stroke();
+    if(Math.random()>0.5&&TREES[i][0]-1>-1&&grid[TREES[i][0]-1][TREES[i][1]][2]<1) {
+      grid[TREES[i][0]-1][TREES[i][1]][2]++;
+    }
+    if(Math.random()>0.5&&TREES[i][0]+1<gridX&&grid[TREES[i][0]+1][TREES[i][1]][2]<1) {
+      grid[TREES[i][0]+1][TREES[i][1]][2]++;
+    }
+    if(Math.random()>0.5&&TREES[i][1]-1>-1&&grid[TREES[i][0]][TREES[i][1]-1][2]<1) {
+      grid[TREES[i][0]][TREES[i][1]-1][2]++;
+    }
+    if(Math.random()>0.5&&TREES[i][1]+1<gridY&&grid[TREES[i][0]][TREES[i][1]+1][2]<1) {
+      grid[TREES[i][0]][TREES[i][1]+1][2]++;
+    }
+    if(Math.random()>0.25&&grid[TREES[i][0]][TREES[i][1]][2]<maxTREE) {
+      grid[TREES[i][0]][TREES[i][1]][2]++;
+    }
+  } 
+  console.clear();
+  console.log(TREES.length);
+}
+
+window.setInterval(spread,1);
+</script>
+</body>
+</html>
