@@ -1,2 +1,2 @@
-# trixter9994.github.io
+# TrixyMixy.github.io
 A website I guess.
