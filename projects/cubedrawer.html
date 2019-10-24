@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+ctx.canvas.width  = window.innerWidth;
+ctx.canvas.height = window.innerHeight;
+
+//4th dimension made out of 8 cubes
+//1st dimension made up of 2 points
+//2nd dimension made up of 4 lines and 8 points
+//3rd dimension made up of 6 squares, 24 lines, and 48 points.
+//4th dimension made up of 8 cubes, 48 squares, 192 lines, 384 points
+class Cube{
+  constructor(x,y,z,posX,posY,posZ,vx,vy,vz){
+    this.x = x;
+    this.y = y;
+    this.z = z;
+    this.posX = posX;
+    this.posY = posY;
+    this.posZ = posZ;
+    this.vx = vx;
+    this.vy = vy;
+    this.vz = vz;
+    this.z=this.z/2
+    this.posZ=this.posZ/2
+    this.posX+=this.posZ
+    this.posY-=this.posZ
+    
+  }
+  draw(){
+    this.posX += this.vx;
+    this.posY += this.vy;
+    this.posZ += this.vz;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.rect(this.posX,this.posY,this.x,this.y);
+    ctx.rect(this.posX+this.z,this.posY-this.z,this.x,this.y);
+    ctx.lineTo(this.posX,this.posY);
+    ctx.moveTo(this.posX+this.x,this.posY);
+    ctx.lineTo(this.posX+this.z+this.x,this.posY-this.z);
+    ctx.moveTo(this.posX,this.posY+this.y);
+    ctx.lineTo(this.posX+this.z,this.posY+this.y-this.z);
+    ctx.moveTo(this.posX+this.x,this.posY+this.y);
+    ctx.lineTo(this.posX+this.z+this.x,this.posY+this.y-this.z);
+    ctx.stroke();
+  }
+}
+
+var Cube1 = new Cube(100,100,100,100,100,0,-1,-1,0);
+
+function animate() {
+  Cube1.draw();
+  requestAnimationFrame(animate);
+}
+animate();
+//setInterval(function(){Cube1.draw()}, 33.333333333)
+</script>
+</body>
+</html>
