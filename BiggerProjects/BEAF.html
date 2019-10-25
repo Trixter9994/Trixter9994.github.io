@@ -64,7 +64,7 @@
     args[1]=args[0]
     args[2]--
     for(i=0;uarr[1]>i+2;i++) {
-      args=[args[0],[...args],args[2]/*-1*/,...args.slice(3, args.length-1)]
+      args=[args[0],[...args],args[2]/*-1*/,...args.slice(3, args.length)]
     }
     if(args[args.length-1]<2){
       for(x=args.length;x>0;x--){
