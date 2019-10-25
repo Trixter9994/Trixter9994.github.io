@@ -63,12 +63,19 @@
     //got lazy so I just set it to definite value
     args[1]=args[0]
     args[2]--
-    for(i=0;uarr[1]>i+2;i++) {
-      args=[args[0],[...args],args[2]/*-1*/,...args.slice(3, args.length)]
-    }
+    largs=args
     if(args[args.length-1]<2){
       for(x=args.length;x>0;x--){
         if(args[args.length-1]<2)args.pop();
+      }
+    }
+    if(args.slice(2, args.length)[0]!=undefined){
+      for(i=0;uarr[1]>i+2;i++) {
+        args=[args[0],[...args],args[2]/*-1*/,...largs.slice(3, args.length)]
+      }
+    } else {
+      for(i=0;uarr[1]>i+2;i++) {
+        args=[args[0],[...args]/*-1*/]
       }
     }
     return JSON.stringify(args);
@@ -82,7 +89,6 @@ function getResult(){
   for(var i=0;i<vals.length;i++){
     nvals.push(parseInt(vals[i]));
   }
-  console.log(nvals);
   document.getElementById("output").innerHTML=BEAF(...nvals);
 }
 //console.log(BEAF(10,2,2,1,1))
