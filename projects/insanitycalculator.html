@@ -1,0 +1,166 @@
+<html>
+  <b>
+    <center>
+      <h1>
+        Judge Your INSANITY!
+      </h1>
+    </center>
+  </b>
+  <script>
+    var Insanities = ['Boringest', 'Boringer', 'Boring', 'Normal', 'Crazy', 'Crazier', 'Craziest']
+    var a = prompt("What Insanity Level are you?")
+    var b = "You are "
+    var Medals = ['m1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'm9', 'm10', 'm11']
+    var Medals = 0 /*Why did I do this?! (Me 3 years after the fact)*/
+
+    function craze(a) {
+      if (a == null) {
+        alert("Type in something!")
+        a = prompt("What Insanity Level are you?")
+        craze(a)
+      } else {
+        if (confirm("Do you want to judge your insanity?")) {
+          if (a == 42) {
+            alert("THE ANSWER TO LIFE,\n\THE UNIVERSE,\n\ AND EVERYTHING!?!?")
+            alert("*explodes*")
+          }
+          if (a == 666) {
+            alert("Spooky scary skeletons,\n\Send shivers down your spine.")
+            alert("Shrieking skulls will shock your soul\n\and seal your doom tonight")
+            alert("You gained the 'Spooky Medal'")
+            let m2 = 1
+          }
+          if (a > -1) {
+            alert("Insanity Level: " + (a * a))
+          }
+          if (a < 0) {
+            alert("Insanity Level: " + (a * -a))
+          }
+          if (a <= -15) {
+            alert(b + "the " + Insanities[0])
+          }
+          if (a < -5 && a > -15) {
+            alert(b + Insanities[1])
+          }
+          if (a < 0 && a > -6) {
+            alert(b + Insanities[2])
+          }
+          if (a == 0) {
+            alert(b + Insanities[3])
+          }
+          if (a < 6 && a > 0) {
+            alert(b + Insanities[4])
+          }
+          if (a > 5 && a < 15) {
+            alert(b + Insanities[5])
+          }
+          if (a >= 15 && a != 42 && a != 69 && a != 420 && a != 9001 && a != 9000 && a != "a" && a != "My insanity" && a != "Dab" && a == "dab") {
+            alert(b + "the " + Insanities[6])
+          }
+          if (a == 42) {
+            alert("You blew up everything...")
+            alert("You have achieved a new level of insanity.")
+            alert("Good job.")
+            alert("You get a medal.")
+            alert("The 'Beyond insane' Medal.")
+            let m1 = 1
+          }
+          if (a == 69) {
+            alert("Think you're so edgy, huh?")
+            alert("You disgust me.")
+            alert("*sigh*")
+            alert("Here's a Medal I guess.")
+            alert("You've gained the 'MLG' Medal!")
+            let m3 = 1
+          }
+          if (a == 420) {
+            alert("Yeah bro!")
+            alert("Oh man, bro. I think I'm high...")
+            alert("As high as.. Sky High Eli!")
+            alert("Yeah man bro, chump, pal, friend amigo.")
+            alert("You get a medal man.")
+            alert("You've gained the 'Sky High' Medal! Man!")
+            let m4 = 1
+          }
+          if (a == 9001) {
+            alert("IT'S OVER 9000!!")
+            alert("BARELY OVER 9000!!")
+            alert("I THINK THERE'S A MEDAL\n\WHEN YOU GET OVER 9000!!")
+            alert("YOU'VE GAINED THE 'BARELY OVER 9000!' MEDAL!!")
+            let m5 = 1
+          }
+          if (a == 9000) {
+            alert("Oh ok. The power levels aren't over 9000.")
+            alert("They're just 9000.")
+            alert("Everythings fine.")
+            alert("I did find this medal on the ground though.")
+            alert("Here. Sorry for wasting your time.")
+            alert("You've gained the 'Just 9000' Medal!")
+            let m6 = 1
+          }
+          if (a == "roblox" || a == "Roblox") {
+            alert("U WANNA FIT ME M8?!?!!11")
+            alert("360 U NOcoPe ON cALL Of DuTY ROBLoX!!1!!11")
+            alert("i gOT MineCRAft DLC oN ROlePlay SerVER!1!!111!")
+            alert("iM So aWeSOme I dOnT NeeD tHIS MeDaL!!11!!11")
+            alert("yOUVe gAined ThE 'cAnCeR' MeDaL!!!1!!1")
+            let m7 = 1
+          }
+          if (a == "Chaos Theory") {
+            alert("...")
+            var c = prompt("What's the Password?")
+            if (c == "Unknown") {
+              alert("...")
+              alert("You have released an ancient evil.")
+              alert("A monster that lies beyond the borders of your imagination...")
+              alert("")
+            } else {
+              alert("ERROR!")
+            }
+          }
+          if (a * a == Infinity) {
+            alert("Did you really take the time to type out all those 9's?")
+            alert("You must have a lot of time on your hands.")
+            alert("And/Or you have no life.")
+            alert("Here's your medal. Time waster.")
+            alert("You've gained the 'Lifeless' Medal!")
+            let m8 = 1
+          }
+          if (a == "a") {
+            alert("*facepalm*")
+            alert("Thanks for telling me that a = a.")
+            alert("I didn't know that.")
+            let m9 = 1
+          }
+          if (a == "My insanity" || a == "my insanity" || a == "My Insanity") {
+            alert("*facepalm*")
+            alert("Thanks, your insanity is your insanity.")
+            alert("I couldn't guess why.")
+            alert("To show off your shame, here's a medal.")
+            alert("You've gained the 'Captain Obvious' Medal! It's called the Captain Obvious Medal!")
+            let m10 = 1
+          }
+          if (a == "Allstar" || a == "allstar") {
+            alert("Somebody Once told me\n\The world was going to roll me,")
+            alert("I aint the sharpest tool in the shed.")
+            alert("She was looking kinda dumb\n\With her finger and her thumb\n\In the shape of an L on her forehead...")
+            alert("You've gained the 'Smashmouth' Medal!")
+            let m11 = 1
+          }
+          if (a == "dab" | a == "Dab") {
+            alert("I hate you.")
+            alert("You don't get a meddle for this.")
+            alert("No.")
+            alert("You don't deserve anything.")
+          }
+        } else {
+          alert("Well ok then...")
+        }
+      }
+    }
+    craze(a)
+    // Storage for me cuz I'm lazy: && a != 666 && a != 42 && a != 69 && a != 420 && a != 9001 && a != 9000 //
+
+  </script>
+
+</html>
