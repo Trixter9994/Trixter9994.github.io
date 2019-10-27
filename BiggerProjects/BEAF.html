@@ -34,11 +34,11 @@
    args[1]=1 //<-- Also remember 
    largs=[]
    sc=0
-   for (i=0;i<args.length-1;i++) {
+   for (i=1;i<args.length-1;i++) {
     if(args.indexOf(args[i])!=args.length-1&&args[i]==1) {
       args[i]=args[0];
     }
-    largs.push(args[0])
+    largs.push(args[0]);
     sc++
    }
    //largs.splice(1,1)
@@ -52,7 +52,7 @@
     } else {
     	xer=args[3].toString()
     };*/
-    args=[...largs,[...args],...margs.slice(sc,margs.length)];
+    args=[...largs,[...args],...margs.slice(sc+1,margs.length)];
   }
   }
   //args=args.concat(args.slice(3,args.length))
