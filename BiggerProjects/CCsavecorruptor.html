@@ -11,10 +11,10 @@ div {
 }
 </style>
 <script>
-var x = document.createElement("INPUT");
+var x = document.body.createElement("INPUT");
 x.setAttribute("type", "text");
 document.getElementById("app").appendChild(x);
-var y = document.createElement("INPUT");
+var y = document.body.createElement("INPUT");
 y.setAttribute("type", "text");
 document.getElementById("CorruptLevel").appendChild(y);
 var z = document.getElementById("beta");
@@ -65,10 +65,8 @@ function corrupt() {
   document.getElementById("result").innerHTML=saveID;
 }
 </script>
-Corruption Level:
-<div id="CorruptLevel"></div>
-Save Data:
-<div id="app"></div>
+<div id="CorruptLevel">Corruption Level:<br></div>
+<div id="app">Save Data:<br></div>
 <button id="button">Corrupt</button><input type="checkbox" id="beta">Beta</input><br>
 <div id="result"></div>
 </body>
